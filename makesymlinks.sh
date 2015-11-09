@@ -5,11 +5,10 @@
 ############################
 
 ########## Variables
-
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim spacemacs emacs.d zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
-
+#files="bashrc vimrc vim spacemacs emacs.d zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="bashrc"
 ##########
 
 # create dotfiles_old in homedir
@@ -68,5 +67,45 @@ if [[ ! -d $dir/emacs.d/ ]]; then
 fi
 }
 
-install_zsh
-install_spacemacs
+read -p "Vim? (y/n) " -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	for file in "vimrc vim"; do
+        echo "Moving any existing dotfiles from ~ to $olddir"
+        mv ~/.$file $olddir/
+        echo "Creating symlink to $file in home directory."
+        ln -s $dir/$file ~/.$file
+    done
+fi;
+
+read -p "Zsh? (y/n) " -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	for file in "zshrc oh-my-zsh"; do
+        echo "Moving any existing dotfiles from ~ to $olddir"
+        mv ~/.$file $olddir/
+        echo "Creating symlink to $file in home directory."
+        ln -s $dir/$file ~/.$file
+    done
+	install_zsh;
+fi;
+
+read -p "Spacemacs? (y/n) " -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	for file in "spacemacs emacs.d"; do
+        echo "Moving any existing dotfiles from ~ to $olddir"
+        mv ~/.$file $olddir/
+        echo "Creating symlink to $file in home directory."
+        ln -s $dir/$file ~/.$file
+    done
+	install_spacemacs;
+fi;
+
+
+
+unset dir;
+unset olddir;
+unset files;
+unset install_zsh;
+unset install_spacemacs;
