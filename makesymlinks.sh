@@ -9,7 +9,7 @@ dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 #files="bashrc vimrc spacemacs emacs.d zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
 files="bashrc"
-vimfiles="vimrc"
+vimfiles="vimrc vim_runtime"
 zshfiles="zshrc oh-my-zsh"
 spacemacsfiles="spacemacs emacs.d"
 ##########
@@ -64,22 +64,17 @@ else
 fi
 }
 
+install_vim () {
+if [[ ! -d $dir/vim_runtime/ ]]; then
+    git clone https://github.com/amix/vimrc.git $dir/vim_runtime
+fi
+}
+
 install_spacemacs () {
 if [[ ! -d $dir/emacs.d/ ]]; then
     git clone --recursive https://github.com/syl20bnr/spacemacs $dir/emacs.d
 fi
 }
-
-read -p "Vim? (y/n) " -n 1;
-echo "";
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    for file in $vimfiles; do
-        echo "Moving any existing dotfiles from ~ to $olddir"
-        mv ~/.$file $olddir/
-        echo "Creating symlink to $file in home directory."
-        ln -s $dir/$file ~/.$file
-    done
-fi;
 
 read -p "Zsh? (y/n) " -n 1;
 echo "";
@@ -90,7 +85,19 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "Creating symlink to $file in home directory."
         ln -s $dir/$file ~/.$file
     done
-	install_zsh;
+    install_zsh;
+fi;
+
+read -p "Vim? (y/n) " -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    for file in $vimfiles; do
+        echo "Moving any existing dotfiles from ~ to $olddir"
+        mv ~/.$file $olddir/
+        echo "Creating symlink to $file in home directory."
+        ln -s $dir/$file ~/.$file
+    done
+    install_vim
 fi;
 
 read -p "Spacemacs? (y/n) " -n 1;
@@ -102,7 +109,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "Creating symlink to $file in home directory."
         ln -s $dir/$file ~/.$file
     done
-	install_spacemacs;
+    install_spacemacs;
 fi;
 
 
@@ -111,4 +118,5 @@ unset dir;
 unset olddir;
 unset files;
 unset install_zsh;
+unset install_vim;
 unset install_spacemacs;
