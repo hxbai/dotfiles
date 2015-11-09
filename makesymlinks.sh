@@ -7,7 +7,7 @@
 ########## Variables
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-#files="bashrc vimrc vim spacemacs emacs.d zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+#files="bashrc vimrc spacemacs emacs.d zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
 files="bashrc"
 ##########
 
@@ -70,7 +70,7 @@ fi
 read -p "Vim? (y/n) " -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	for file in "vimrc vim"; do
+	for file in "vimrc"; do
         echo "Moving any existing dotfiles from ~ to $olddir"
         mv ~/.$file $olddir/
         echo "Creating symlink to $file in home directory."
