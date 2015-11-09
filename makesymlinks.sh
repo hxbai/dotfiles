@@ -70,7 +70,7 @@ fi
 read -p "Vim? (y/n) " -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	for file in "vimrc"; do
+    for file in "vimrc"; do
         echo "Moving any existing dotfiles from ~ to $olddir"
         mv ~/.$file $olddir/
         echo "Creating symlink to $file in home directory."
@@ -81,7 +81,7 @@ fi;
 read -p "Zsh? (y/n) " -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	for file in "zshrc oh-my-zsh"; do
+    for file in "zshrc oh-my-zsh"; do
         echo "Moving any existing dotfiles from ~ to $olddir"
         mv ~/.$file $olddir/
         echo "Creating symlink to $file in home directory."
@@ -93,7 +93,7 @@ fi;
 read -p "Spacemacs? (y/n) " -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	for file in "spacemacs emacs.d"; do
+    for file in "spacemacs emacs.d"; do
         echo "Moving any existing dotfiles from ~ to $olddir"
         mv ~/.$file $olddir/
         echo "Creating symlink to $file in home directory."
