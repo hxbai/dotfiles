@@ -9,3 +9,5 @@ else
 endif
 catch
 endtry
+
+set nu
