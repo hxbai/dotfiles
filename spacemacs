@@ -215,6 +215,15 @@ layers configuration. You are free to put any user code."
            (not (eq major-mode 'dired-mode)))
           (fci-mode 1))))
   (global-fci-mode 1)
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (sh . t)
+     (python . t)
+     (C . t)
+     ))
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
