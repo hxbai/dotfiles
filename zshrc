@@ -9,7 +9,8 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="xiong-chiamiov-plus"
-ZSH_THEME="wezm"
+#ZSH_THEME="wezm"
+ZSH_THEME=pygmalion
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -28,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting sudo virtualenvwrapper web-search pip autojump)
+plugins=(git colored-man colorize github zsh-syntax-highlighting brew osx sudo virtualenv web-search python pip autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,3 +49,8 @@ qfind () {
   find . -exec grep -l -s $1 {} \;
   return 0
 }
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+source /usr/local/bin/virtualenvwrapper.sh
