@@ -55,3 +55,11 @@ qfind () {
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
+
+# anaconda
+alias conda='~/anaconda/bin/conda '
+alias anapy='~/anaconda/bin/python '
+alias spyder='~/anaconda/bin/spyder '
+alias jupyter='~/anaconda/bin/jupyter '
+alias ipython='~/anaconda/bin/ipython '
+export ana=$HOME/anaconda/bin
