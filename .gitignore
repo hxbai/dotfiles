@@ -5,3 +5,4 @@ chef/
 private
 emacs.d/
 vim_runtime/
+.DS_Store
