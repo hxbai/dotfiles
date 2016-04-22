@@ -30,13 +30,19 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man colorize github zsh-syntax-highlighting brew osx sudo virtualenv web-search python pip autojump)
+plugins=(colored-man-pages colorize
+         git github
+         sudo autojump command-not-found
+         brew osx xcode
+         docker docker-compose
+         python pip virtualenv
+         web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # Shell Aliases
 
-## Git Aliases
+# Git Aliases
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -63,3 +69,5 @@ alias spyder='~/anaconda/bin/spyder '
 alias jupyter='~/anaconda/bin/jupyter '
 alias ipython='~/anaconda/bin/ipython '
 export ana=$HOME/anaconda/bin
+
+alias grep='grep --color=auto'
