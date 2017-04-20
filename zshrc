@@ -63,11 +63,18 @@ export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
 
 # anaconda
-alias conda='~/anaconda/bin/conda '
-alias anapy='~/anaconda/bin/python '
-alias spyder='~/anaconda/bin/spyder '
-alias jupyter='~/anaconda/bin/jupyter '
-alias ipython='~/anaconda/bin/ipython '
-export ana=$HOME/anaconda/bin
+#alias conda='~/anaconda/bin/conda '
+#alias anapy='~/anaconda/bin/python '
+#alias spyder='~/anaconda/bin/spyder '
+#alias jupyter='~/anaconda/bin/jupyter '
+#alias ipython='~/anaconda/bin/ipython '
+#export ana=$HOME/anaconda/bin
+export PATH=~/anaconda/bin:$PATH
 
 alias grep='grep --color=auto'
+
+#CUDA
+export PATH=/Developer/NVIDIA/CUDA-8.0/bin${PATH:+:${PATH}}
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDNN/cuda/lib:/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$LD_LIBRARY_PATH
