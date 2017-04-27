@@ -8,7 +8,7 @@
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 #files="bashrc vimrc spacemacs emacs.d zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
-files="bashrc"
+files="bashrc gitignore"
 vimfiles="vimrc vim_runtime"
 zshfiles="zshrc oh-my-zsh"
 spacemacsfiles="spacemacs emacs.d"
