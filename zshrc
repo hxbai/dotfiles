@@ -69,7 +69,7 @@ qfind () {
 #alias jupyter='~/anaconda/bin/jupyter '
 #alias ipython='~/anaconda/bin/ipython '
 #export ana=$HOME/anaconda/bin
-export PATH=~/anaconda/bin:$PATH
+export PATH=~/miniconda3/bin:$PATH
 
 alias grep='grep --color=auto'
 
