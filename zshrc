@@ -78,3 +78,6 @@ export PATH=/Developer/NVIDIA/CUDA-8.0/bin${PATH:+:${PATH}}
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDNN/cuda/lib:/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$LD_LIBRARY_PATH
+
+#brew bottles tuna
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
