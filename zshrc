@@ -35,7 +35,7 @@ plugins=(colored-man-pages colorize
          sudo autojump command-not-found
          brew osx xcode
          docker docker-compose
-         python pip virtualenv
+         python pip
          web-search)
 
 source $ZSH/oh-my-zsh.sh
@@ -58,9 +58,9 @@ qfind () {
 }
 
 # virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Projects
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/Projects
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # anaconda
 #alias conda='~/anaconda/bin/conda '
