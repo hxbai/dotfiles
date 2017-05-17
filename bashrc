@@ -34,7 +34,3 @@ export PS1="${NO_COLOR}[${ORANGE}\u@\h ${CYAN}\w${NO_COLOR}]\$ "
 
 alias lla='ls -al --color=auto'
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
-source /usr/bin/virtualenvwrapper_lazy.sh
