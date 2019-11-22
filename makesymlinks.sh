@@ -73,10 +73,10 @@ fi
 install_autojump () {
 if [[ ! -d $dir/autojump/ ]]; then
     git clone https://github.com/wting/autojump.git $dir/autojump
-    cd automump
-    python install.py
-    cd $dir
 fi
+cd autojump
+python install.py
+cd $dir
 }
 
 read -p "Zsh? (y/n) " -n 1;
