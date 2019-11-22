@@ -11,7 +11,6 @@ olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="bashrc gitignore"
 vimfiles="vimrc vim_runtime"
 zshfiles="zshrc oh-my-zsh"
-spacemacsfiles="spacemacs emacs.d"
 ##########
 
 # create dotfiles_old in homedir
@@ -70,9 +69,13 @@ if [[ ! -d $dir/vim_runtime/ ]]; then
 fi
 }
 
-install_spacemacs () {
-if [[ ! -d $dir/emacs.d/ ]]; then
-    git clone --recursive https://github.com/syl20bnr/spacemacs $dir/emacs.d
+
+install_autojump () {
+if [[ ! -d $dir/autojump/ ]]; then
+    git clone https://github.com/wting/autojump.git $dir/autojump
+    cd automump
+    python install.py
+    cd $dir
 fi
 }
 
@@ -88,6 +91,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     install_zsh;
 fi;
 
+read -p "autojump? (y/n) " -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    install_autojump;
+fi;
+
 read -p "Vim? (y/n) " -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -100,23 +109,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     install_vim
 fi;
 
-read -p "Spacemacs? (y/n) " -n 1;
-echo "";
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    for file in $spacemacsfiles; do
-        echo "Moving any existing dotfiles from ~ to $olddir"
-        mv ~/.$file $olddir/
-        echo "Creating symlink to $file in home directory."
-        ln -s $dir/$file ~/.$file
-    done
-    install_spacemacs;
-fi;
-
-
-
 unset dir;
 unset olddir;
 unset files;
 unset install_zsh;
 unset install_vim;
-unset install_spacemacs;
