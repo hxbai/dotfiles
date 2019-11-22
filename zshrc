@@ -30,13 +30,16 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colored-man-pages colorize
-         git github
-         sudo autojump command-not-found
-         brew osx xcode
+plugins=(colored-man-pages
+         sudo command-not-found
+         autojump
+         extract
+         git
+         brew osx
+         tmux
          docker docker-compose
          python pip
-         web-search)
+        )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -57,24 +60,13 @@ qfind () {
   return 0
 }
 
-# virtualenvwrapper
-#export WORKON_HOME=$HOME/.virtualenvs
-#export PROJECT_HOME=$HOME/Projects
-#source /usr/local/bin/virtualenvwrapper.sh
-
-# anaconda
-#alias conda='~/anaconda/bin/conda '
-#alias anapy='~/anaconda/bin/python '
-#alias spyder='~/anaconda/bin/spyder '
-#alias jupyter='~/anaconda/bin/jupyter '
-#alias ipython='~/anaconda/bin/ipython '
-#export ana=$HOME/anaconda/bin
-export PATH=~/miniconda3/bin:$PATH
-
 alias grep='grep --color=auto'
 
+# anaconda
+export PATH=~/miniconda3/bin:$PATH
+
 #CUDA
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+#export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
 #brew bottles tuna
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
