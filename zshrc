@@ -62,11 +62,14 @@ qfind () {
 
 alias grep='grep --color=auto'
 
+setopt inc_append_history
+setopt share_history
+
 # anaconda
-export PATH=~/miniconda3/bin:$PATH
+# export PATH=~/miniconda3/bin:$PATH
 
-#CUDA
-#export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+# CUDA
+# export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
-#brew bottles tuna
-#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+# brew bottles tuna
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
