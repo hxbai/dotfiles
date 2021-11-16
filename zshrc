@@ -35,7 +35,7 @@ plugins=(colored-man-pages
          autojump
          extract
          git
-         brew osx
+         brew macos
          tmux
          docker docker-compose
          python pip
